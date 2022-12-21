@@ -11,6 +11,7 @@ function App() {
 
   const [locationInput, setLocationInput] = useState()
 
+
   let location;
 
   if (locationInput !== undefined) {
@@ -19,10 +20,9 @@ function App() {
     location = useLocation()
   }
  
- 
-
   const handleSubmit = (e) => {
     e.preventDefault()
+    setLocationInput(e.target.inputSearch.value)
   }
   
   return (
@@ -31,7 +31,7 @@ function App() {
         <h1>Rick and Morty</h1>
         <form onSubmit={handleSubmit}>
           <input type="text" id="inputSearch" />
-          <button></button>
+          <button>Search</button>
         </form>
         < LocationInfo
           location={location}

@@ -22,7 +22,7 @@ export const useLocation = (locationId) => {
     axios.get(URL)
       .then(res => setLocation(res.data))
       .catch(err => console.log(err))
-  }, [URL])
+  }, [locationId])
 
   return location
 
