@@ -16,7 +16,8 @@ function App() {
 
   if (locationInput !== undefined) {
     location = useLocation(locationInput)
-  } else {
+  }
+  else {
     location = useLocation()
   }
  
