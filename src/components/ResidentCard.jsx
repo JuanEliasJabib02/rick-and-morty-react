@@ -1,22 +1,20 @@
 import React from 'react'
-
+import "./styles/residentCard.css"
 import { useGetResident } from '../hooks/useGetResident'
 
 const ResidentCard = ({ url }) => {
 
-
   const resident = useGetResident(url)
 
-
+ 
   
   return (
     <article className='card'>
       <header className='card__header'>
-      <img src={resident.image} alt="" />
-        <div className='card__circle-container'>
-          <span className='card__circle'></span>
-          <span className='card__circle-value'>{resident.status}</span>
-        </div>
+        <img className='card__header-avatar' src={resident.image} alt="" />
+        <div className={`card__status ${resident?.status}`}>
+          <span className="card__status-text">{resident?.status}</span>
+        </div>  
       </header>
 
       <section className='card__body'>

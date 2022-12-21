@@ -1,0 +1,10 @@
+.residents-container {
+  border: 0.5rem solid black;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
