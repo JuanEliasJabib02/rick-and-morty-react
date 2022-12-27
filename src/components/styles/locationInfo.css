@@ -1,0 +1,60 @@
+.location-info {
+  width: 60rem;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+
+.location-info__planet-name {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.location-info__planet-name>span {
+  color: #3a86ff;
+}
+
+.location-info__list {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.location-info__list>li {
+  font-size: 2rem;
+}
+
+.location-info__list>li>span {
+  color: #3a86ff
+}
+
+
+@media all and (max-width:604px) {
+  .location-info {
+    width: 40rem;
+  }
+
+  .location-info__list>li {
+    font-size: 1.5rem;
+  }
+}
+
+@media all and (max-width:586px) {
+
+  .location-info__list {
+    flex-direction: column;
+  }
+
+  .location-info__list>li {
+    margin: 0 auto;
+  }
+}
+
+@media all and (max-width:406px) {
+  .location-info {
+    width: 35rem;
+  }
+}

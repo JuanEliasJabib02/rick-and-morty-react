@@ -1,4 +1,5 @@
 import React from 'react'
+import "./styles/locationInfo.css"
 
 const LocationInfo = ({ location }) => {
 
@@ -17,12 +18,12 @@ const LocationInfo = ({ location }) => {
   return (
     <div className='location-info'>
       <h2 className='location-info__planet-name'>
-        {info.name}
+        Location: <span>{info.name}</span>
       </h2>
       <ul className='location-info__list'>
-        <li><span>Type: {info.type}</span></li>
-        <li><span>Dimension: {info.dimension}</span></li>
-        <li><span>Population: {info.population}</span></li>
+        <li>Type: <span>{info.type}</span></li>
+        <li>Dimension: <span>{info.dimension}</span></li>
+        <li>Population: <span>{info.population}</span></li>
       </ul>
       
     </div>

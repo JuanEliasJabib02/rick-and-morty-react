@@ -28,11 +28,11 @@ function App() {
   
   return (
     <div className="App">
-      <header>
-        <h1>Rick and Morty</h1>
-        <form onSubmit={handleSubmit}>
-          <input type="text" id="inputSearch" />
-          <button>Search</button>
+      <header className='header'>
+        <h1 className='header__title'>Rick and Morty <span>Wiki</span></h1>
+        <form className='header__form' onSubmit={handleSubmit}>
+          <input placeholder='Search for location id' className="header__form-input"type="text" id="inputSearch" />
+          <button className='header__form-button'>Search</button>
         </form>
         < LocationInfo
           location={location}
