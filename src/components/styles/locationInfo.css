@@ -1,5 +1,5 @@
 .location-info {
-  width: 60rem;
+  width: 80rem;
   height: auto;
   margin: 0 auto;
   margin-top: 2rem;
@@ -24,7 +24,7 @@
 }
 
 .location-info__list>li {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .location-info__list>li>span {
