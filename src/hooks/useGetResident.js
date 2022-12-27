@@ -11,7 +11,7 @@ export const useGetResident = (url) => {
   useEffect(() => {
 
     axios.get(url)
-      .then(res => console.log(setResident(res.data)))
+      .then(res => setResident(res.data))
       .catch(err => console.log(err))
   }, [])
 

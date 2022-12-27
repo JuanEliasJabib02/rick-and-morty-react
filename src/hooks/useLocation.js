@@ -21,7 +21,10 @@ export const useLocation = (locationId) => {
     const URL = `https://rickandmortyapi.com/api/location/${id}`
     axios.get(URL)
       .then(res => setLocation(res.data))
-      .catch(err => console.log(err))
+      .catch(err => {
+        console.log(err)
+        setLocation("has-error")
+      })
   }, [locationId])
 
   return location

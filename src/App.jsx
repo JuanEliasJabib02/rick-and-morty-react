@@ -3,7 +3,8 @@ import './App.css'
 import { useLocation } from './hooks/useLocation'
 import LocationInfo from './components/LocationInfo'
 import ResidentCard from './components/ResidentCard'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import ErrorMessage from './components/ErrorMessage'
 
 
 
@@ -11,7 +12,9 @@ function App() {
 
   const [locationInput, setLocationInput] = useState()
 
+  const [hasError, setHasError] = useState()
 
+  
   let location;
 
   if (locationInput !== undefined) {
@@ -20,6 +23,21 @@ function App() {
   else {
     location = useLocation()
   }
+
+
+  if (location === "has-error") {
+    useEffect(() => {
+      setHasError(true)
+    })
+  } else {
+    useEffect(() => {
+      setHasError(false)
+    })
+    
+  }
+
+  console.log(hasError)
+
  
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -37,14 +55,28 @@ function App() {
         < LocationInfo
           location={location}
         />
-       </header> 
-      <div className='residents-container'>
+        </header> 
+
+        {/* Condicional Render */}
+
         {
-          location?.residents?.map(url => (
-            < ResidentCard url={url} key={url} />
-          ))
+        hasError
+          ?
+            <ErrorMessage />
+          :
+            <>
+              <div className='residents-container'>
+                {
+                  location?.residents?.map(url => (
+                    < ResidentCard url={url} key={url} />
+                  ))
+                }
+              </div>
+            </>
+            
         }
-      </div>
+
+
     </div>
   )
 }
